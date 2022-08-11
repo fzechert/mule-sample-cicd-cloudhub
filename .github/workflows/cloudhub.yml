@@ -97,4 +97,4 @@ jobs:
         mvn deploy -DmuleDeploy \
           -Dusername="${{secrets.ANYPOINT_USERNAME}}" \
           -Dpassword="${{secrets.ANYPOINT_PASSWORD}}" \
-          -Dmessage="Mulesoft says: Hello Frank"
+          -Dmessage="Mulesoft says hi"
