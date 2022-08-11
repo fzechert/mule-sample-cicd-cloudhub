@@ -91,8 +91,10 @@ jobs:
           }]
     - name: Deploy to CloudHub
       env:
-        AUTHOR: "Andres Morales"
+        AUTHOR: "Frank"
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy -DmuleDeploy -Dap.clientid=${{ secrets.AP_CLIENTID }} \
-        -Dap.clientsecret=${{ secrets.AP_CLIENTSECRET }}
+        mvn deploy -DmuleDeploy \
+          -Dusername="${{secrets.ANYPOINT_USERNAME}}" \
+          -Dpassword="${{secrets.ANYPOINT_PASSWORD}}" \
+          -Dmessage="Mulesoft says: Hello Frank"
