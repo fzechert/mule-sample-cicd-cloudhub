@@ -93,9 +93,4 @@ jobs:
         AUTHOR: "Frank"
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy
-        
-#-DmuleDeploy
-#-Dusername="${{secrets.ANYPOINT_USERNAME}}" \
-#-Dpassword="${{secrets.ANYPOINT_PASSWORD}}" \
-#-Dmessage="Mulesoft says hi"
+        mvn deploy -DmuleDeploy -Dusername="${{secrets.ANYPOINT_USERNAME}}" -Dpassword="${{secrets.ANYPOINT_PASSWORD}}" -Dmessage="Mulesoft says hi"
